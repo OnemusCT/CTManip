@@ -18,7 +18,7 @@ namespace CTManip
                 var assembly = Assembly.GetExecutingAssembly();
                 var infoAttr = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>();
                 string version = infoAttr?.InformationalVersion ?? assembly.GetName().Version?.ToString() ?? "0.0";
-                return $"Version {version} - {DateTime.Now:yyyy-MM-dd}";
+                return $"Version {version}";
             }
         }
         public ManipController ManipController = new ManipController();
