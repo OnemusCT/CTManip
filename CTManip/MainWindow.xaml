@@ -36,16 +36,7 @@
                 </Style>
             </StackPanel.Resources>
 
-            <!-- Dock panel for Offset settings -->
-            <DockPanel HorizontalAlignment="Left">
-                <Label Content="Offset (seconds):"/>
-                <TextBox x:Name="integerTextBox" Width="25" Margin="10 0 0 0"
-                         TextAlignment="Center"
-                         VerticalAlignment="Center"
-                         PreviewTextInput="Offset_PreviewTextInput"
-                         PreviewKeyDown="Offset_PreviewKeyDown" 
-                         Text=""/>
-            </DockPanel>
+            <!-- Offset control removed -->
         
             <StackPanel Margin="0,0,0,40">
                 <Button Width="150" Click="StartManip">New Game</Button>

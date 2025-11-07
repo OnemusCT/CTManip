@@ -136,7 +136,6 @@ namespace CTManip
             if (timeAdjustedForOffset)
                 return time;
 
-            targetManip.Second += MainWindow.timeOffset;
             if (targetManip.Second < 0)
             {
                 int gap = 0 - targetManip.Second;
