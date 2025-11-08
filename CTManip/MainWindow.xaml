@@ -41,7 +41,6 @@
             <StackPanel Margin="0,0,0,40">
                 <Button Width="150" Click="StartManip">New Game</Button>
                 <Button Width="150" Click="StartManip">Nagas</Button>
-                <Button Width="150" Click="StartManip">Zombor</Button>
                 <Button Width="150" Click="StartManip">Masamune</Button>
                 <Button Width="150" Click="StartManip">Nizbel</Button>
                 <Button Width="150" Click="StartManip">Flea</Button>
