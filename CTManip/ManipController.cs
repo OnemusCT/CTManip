@@ -56,8 +56,8 @@ namespace CTManip
             return Process.GetProcessesByName("Chrono Trigger").Length > 0;
         }
 
-        public void ExecuteManip(ManipList.ManipNames name)
-        {
+        public void ExecuteManip(ManipList.ManipNames name) 
+        {   
             savedTimeZone = TimeZoneInfo.Local.StandardName;
 
             ManipList manipList = new ManipList();
@@ -190,7 +190,7 @@ namespace CTManip
             int buffer = 0;
             int attempts = 0;
             // Stop if there's a crash or the game takes too long to start
-            while (buffer < 25 && Application.Current.MainWindow.IsActive && attempts < 500)
+            while (buffer < 25 && attempts < 150)
             {
                 try
                 {
