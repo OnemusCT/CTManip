@@ -188,7 +188,9 @@ namespace CTManip
 
             Process.Start(psi);
             int buffer = 0;
-            while (buffer < 20)
+            int attempts = 0;
+            // Stop if there's a crash or the game takes too long to start
+            while (buffer < 25 && Application.Current.MainWindow.IsActive && attempts < 1000)
             {
                 try
                 {
@@ -196,6 +198,9 @@ namespace CTManip
                     if (GameRunning())
                     {
                         buffer += 1;
+                    } else
+                    {
+                        attempts += 1;
                     }
                 }
                 catch
