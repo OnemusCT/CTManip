@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FF34Manip", "FF34Manip\FF34Manip.csproj", "{76644093-4BB8-4848-9E3E-7119C0D8FF72}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FF34Manip", "CTManip\CTManip.csproj", "{76644093-4BB8-4848-9E3E-7119C0D8FF72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
