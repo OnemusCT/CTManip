@@ -56,8 +56,8 @@ namespace CTManip
             return Process.GetProcessesByName("Chrono Trigger").Length > 0;
         }
 
-        public void ExecuteManip(ManipList.ManipNames name)
-        {
+        public void ExecuteManip(ManipList.ManipNames name) 
+        {   
             savedTimeZone = TimeZoneInfo.Local.StandardName;
 
             ManipList manipList = new ManipList();
@@ -175,25 +175,6 @@ namespace CTManip
                 SetTimeProcess.WaitForExit();
                 SetTimeProcess.Close();
             }
-
-            // Continuously set time until either game is launched or the app is closed
-            try
-            {
-                if (!GameRunning() && Application.Current.MainWindow.IsActive)
-                {
-                    Thread.Sleep(40);
-                    SetTime(targetManip);
-                }
-                else
-                {
-                    RevertTime();
-                }
-            }
-            catch
-            {
-                // Fix  time on crash, particularly common when a manip is active
-                RevertTime();
-            }
         }
 
         private void SetDateTime(Manip targetManip)
@@ -206,7 +187,30 @@ namespace CTManip
             SetDate(targetManip);
 
             Process.Start(psi);
-            SetTime(targetManip);
+            int buffer = 0;
+            int attempts = 0;
+            // Stop if there's a crash or the game takes too long to start
+            while (buffer < 25 && attempts < 150)
+            {
+                try
+                {
+                    SetTime(targetManip);
+                    if (GameRunning())
+                    {
+                        buffer += 1;
+                    }
+                    else
+                    {
+                        attempts += 1;
+                    }
+                    Thread.Sleep(40);
+                }
+                catch
+                {
+                    RevertTime();
+                }
+            }
+            RevertTime();
         }
 
         private void RevertTime()
