@@ -21,7 +21,7 @@ namespace CTManip
             manipNameToFunc = new Dictionary<ManipNames, Func<Manip>>
             {
                 { ManipNames.NewGame, NewGameCT },
-                { ManipNames.Nagas, NewGame },
+                { ManipNames.Nagas, Nagas },
                 { ManipNames.Zombor, Zombor },
                 { ManipNames.Masamune, SealedCaveFF4 },
                 { ManipNames.Nizbel, RainbowPudding },
@@ -68,6 +68,7 @@ namespace CTManip
         // CT
         
         private Manip NewGameCT() { return new Manip(ManipController.TimeZones.CEST, 24, 10, 2021, 16, 20, 01); }
+        private Manip Nagas() { return new Manip(ManipController.TimeZones.CEST, 24, 10, 2021, 16, 20, 00); }
         private Manip Flea() { return new Manip(ManipController.TimeZones.CEST, 24, 10, 2021, 16, 20, 01); }
         private Manip Zombor() { return new Manip(ManipController.TimeZones.CEST, 24, 10, 2021, 16, 20, 01); }
         private Manip Magus() { return new Manip(ManipController.TimeZones.CEST, 24, 10, 2021, 16, 20, 01); }
