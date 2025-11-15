@@ -22,42 +22,55 @@
     </Window.Resources>
     
     <Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
-            <StackPanel.Resources>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="Margin" Value="0,5,0,0"/>
-                    <!-- TODO: update with some click style to indicate active manip-
-                    <Style.Triggers>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Foreground" Value="Green"/>
-                        </Trigger>
-                    </Style.Triggers>
-                    -->
-                </Style>
-            </StackPanel.Resources>
-
-            <!-- Offset control removed -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         
-            <StackPanel Margin="0,0,0,40">
-                <Button Width="150" Click="StartManip">New Game</Button>
-                <Button Width="150" Click="StartManip">Nagas</Button>
-                <Button Width="150" Click="StartManip">Masamune</Button>
-                <Button Width="150" Click="StartManip">Nizbel</Button>
-                <Button Width="150" Click="StartManip">Flea</Button>
-                <Button Width="150" Click="StartManip">Magus</Button>
-                <Button Width="150" Click="StartManip">Black Tyranno</Button>
-                <Button Width="150" Click="StartManip">Woe Rubble</Button>
-                <Button Width="150" Click="StartManip">Golem Twins</Button>
-                <Button Width="150" Click="StartManip">Ghosts</Button>
-                <Button Width="150" Click="StartManip">Rust Rubbles</Button>
-                <Button Width="150" Click="StartManip">Rust Tyranno</Button>
-                <Button Width="150" Click="StartManip">Son of Sun</Button>
-                <Button Width="150" Click="StartManip">Yakra XIII</Button>
-                <Button Width="150" Click="StartManip">Black Omen</Button>
-                <Button Width="150" Click="StartManip">Lavos Shell</Button>
-                <Button Width="150" Click="StartManip">Lavos Core</Button>
+        <Menu Grid.Row="0">
+            <MenuItem Header="Debug">
+                <MenuItem x:Name="BaseRngMenuItem" Header="Base RNG" IsCheckable="True" Click="ToggleBaseRNG"/>
+            </MenuItem>
+        </Menu>
+        
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Margin" Value="0,5,0,0"/>
+                        <!-- TODO: update with some click style to indicate active manip-
+                        <Style.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Foreground" Value="Green"/>
+                            </Trigger>
+                        </Style.Triggers>
+                        -->
+                    </Style>
+                </StackPanel.Resources>
+
+                <!-- Offset control removed -->
+            
+                <StackPanel x:Name="ManipButtonsPanel" Margin="0,0,0,40">
+                    <Button Width="150" Click="StartManip">New Game</Button>
+                    <Button Width="150" Click="StartManip">Nagas</Button>
+                    <Button Width="150" Click="StartManip">Masamune</Button>
+                    <Button Width="150" Click="StartManip">Nizbel</Button>
+                    <Button Width="150" Click="StartManip">Flea</Button>
+                    <Button Width="150" Click="StartManip">Magus</Button>
+                    <Button Width="150" Click="StartManip">Black Tyranno</Button>
+                    <Button Width="150" Click="StartManip">Woe Rubble</Button>
+                    <Button Width="150" Click="StartManip">Golem Twins</Button>
+                    <Button Width="150" Click="StartManip">Ghosts</Button>
+                    <Button Width="150" Click="StartManip">Rust Rubbles</Button>
+                    <Button Width="150" Click="StartManip">Rust Tyranno</Button>
+                    <Button Width="150" Click="StartManip">Son of Sun</Button>
+                    <Button Width="150" Click="StartManip">Yakra XIII</Button>
+                    <Button Width="150" Click="StartManip">Black Omen</Button>
+                    <Button Width="150" Click="StartManip">Lavos Shell</Button>
+                    <Button Width="150" Click="StartManip">Lavos Core</Button>
+                </StackPanel>
             </StackPanel>
-        </StackPanel>
+        </ScrollViewer>
     <Label Content="{Binding AppVersion, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MainWindow}}}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,8,8" />
     </Grid>
 </Window>
