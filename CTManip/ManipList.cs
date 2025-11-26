@@ -23,7 +23,7 @@ namespace CTManip
                 { ManipNames.NewGame, NewGameCT },
                 { ManipNames.Nagas, Nagas },
                 { ManipNames.Zombor, Zombor },
-                { ManipNames.Masamune, SealedCaveFF4 },
+                { ManipNames.Masamune, Masamune },
                 { ManipNames.Nizbel, RainbowPudding },
                 { ManipNames.Flea, Flea },
                 { ManipNames.Magus, Magus },
@@ -165,11 +165,13 @@ namespace CTManip
 
         // CT
         
-        private Manip NewGameCT() { return new Manip(ManipController.TimeZones.CEST, 24, 10, 2021, 16, 20, 01); }
+        private Manip NewGameCT() { return new Manip(ManipController.TimeZones.UTC, 10, 11, 2021, 10, 49, 31); }
         private Manip Nagas() { return new Manip(ManipController.TimeZones.CEST, 24, 10, 2021, 16, 20, 00); }
         private Manip Masamune() {return new Manip(ManipController.TimeZones.GMT, 18, 11, 23, 8, 6, 20); }  
-        private Manip Flea() { return new Manip(ManipController.TimeZones.CEST, 24, 10, 2021, 16, 20, 01); }
-        private Manip Zombor() { return new Manip(ManipController.TimeZones.CEST, 24, 10, 2021, 16, 20, 01); }
+        private Manip Flea() { return new Manip(ManipController.TimeZones.UTC, 15, 06, 2026, 12, 33, 40); }
+        private Manip FleaOld() { return new Manip(ManipController.TimeZones.CEST, 24, 10, 2021, 16, 20, 01); }
+        private Manip Zombor() { return new Manip(ManipController.TimeZones.UTC, 15, 06, 2025, 15, 06, 43); }
+        private Manip ZomborOld() { return new Manip(ManipController.TimeZones.CEST, 24, 10, 2021, 16, 20, 08); }
         private Manip Magus() { return new Manip(ManipController.TimeZones.CEST, 24, 10, 2021, 16, 20, 01); }
         private Manip BlackTyranno() { return new Manip(ManipController.TimeZones.CEST, 24, 10, 2021, 16, 20, 01); }
         private Manip MudImp() { return new Manip(ManipController.TimeZones.CEST, 02, 05, 24, 09, 48, 09); }
