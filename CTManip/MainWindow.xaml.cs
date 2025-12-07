@@ -64,7 +64,7 @@ namespace CTManip
                 { "Zombor", ManipList.ManipNames.Zombor },
                 { "Masamune", ManipList.ManipNames.Masamune },
                 { "Nizbel", ManipList.ManipNames.Nizbel },
-                { "Flea", ManipList.ManipNames.Flea },
+                { "Flea", ManipList.ManipNames.Flea4Heal },
                 { "Magus", ManipList.ManipNames.Magus },
                 { "Nizbel 2", ManipList.ManipNames.Nizbel2 },
                 { "Black Tyranno", ManipList.ManipNames.BlackTyranno },

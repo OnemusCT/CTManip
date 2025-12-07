@@ -59,6 +59,7 @@
                     <Button Width="150" Click="StartManip">Flea</Button>
                     <Button Width="150" Click="StartManip">Magus</Button>
                     <Button Width="150" Click="StartManip">Black Tyranno</Button>
+                    <Button Width="150" Click="StartManip">Mud Imp</Button>
                     <Button Width="150" Click="StartManip">Woe Rubble</Button>
                     <Button Width="150" Click="StartManip">Golem Twins</Button>
                     <Button Width="150" Click="StartManip">Ghosts</Button>
