@@ -168,7 +168,8 @@ namespace CTManip
 
         // CT
         
-        private Manip NewGameCT() { return new Manip(ManipController.TimeZones.UTC, 10, 11, 2021, 10, 49, 31); }
+        private Manip NewGameCT() { return new Manip(ManipController.TimeZones.UTC, 29, 06, 2016, 01, 54, 57); }
+        private Manip NewGameCTOld() { return new Manip(ManipController.TimeZones.UTC, 10, 11, 2021, 10, 49, 31); }
         private Manip Nagas() { return new Manip(ManipController.TimeZones.CEST, 24, 10, 2021, 16, 20, 00); }
         private Manip Masamune() {return new Manip(ManipController.TimeZones.GMT, 18, 11, 23, 8, 6, 20); }  
         private Manip Flea5Heal() { return new Manip(ManipController.TimeZones.UTC, 14, 12, 2002, 11, 21, 00); }
