@@ -66,6 +66,13 @@ namespace CTManip
             SetDateTime(manipList.GetManipByValue(name));
         }
 
+        public void ExecuteManipFromUnixTime(long unixTime)
+        {
+            DateTime t = DateTimeOffset.FromUnixTimeSeconds(unixTime).UtcDateTime;
+            Manip manip = new Manip("UTC", (short)t.Day, (short)t.Month, (short)t.Year, (short)t.Hour, (short)t.Minute, (short)t.Second);
+            SetDateTime(manip);
+        }
+
         private void SetTimeZone(string targetTimeZone)
         {
             string args = "/s \"" + targetTimeZone + "\"";

@@ -144,11 +144,40 @@ namespace CTManip
                     Foreground = System.Windows.Media.Brushes.Gray,
                     Margin = new Thickness(0, 0, 0, 10)
                 };
+                var unixLabel = new Label
+                {
+                    Content = "Enter a Unix timestamp:",
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    Margin = new Thickness(0, 10, 0, 5)
+                };
+                var unixTextBox = new TextBox
+                {
+                    Name = "UnixTimeTextBox",
+                    Width = 100,
+                    Height = 25,
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    TextAlignment = TextAlignment.Center,
+                    MaxLength = 10,
+                    Margin = new Thickness(0, 5, 0, 10)
+                };
+                var unixExecuteButton = new Button
+                {
+                    Content = "Execute",
+                    Width = 50,
+                    Height = 30,
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    Margin = new Thickness(0, 10, 0, 10)
+                };
+                unixExecuteButton.Click += ExecuteUnixManip;
 
                 ManipButtonsPanel.Children.Add(label);
                 ManipButtonsPanel.Children.Add(textBox);
                 ManipButtonsPanel.Children.Add(executeButton);
                 ManipButtonsPanel.Children.Add(instructionLabel);
+                ManipButtonsPanel.Children.Add(unixLabel);
+                ManipButtonsPanel.Children.Add(unixTextBox);
+                ManipButtonsPanel.Children.Add(unixExecuteButton);
+
             }
             else
             {
@@ -180,6 +209,32 @@ namespace CTManip
             {
                 ExecuteBaseRngManip(sender, new RoutedEventArgs());
             }
+        }
+
+        private void ExecuteUnixManip(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = null;
+            foreach (var child in ManipButtonsPanel.Children)
+            {
+                if (child is TextBox tb)
+                {
+                    if(tb.Name.Equals("UnixTimeTextBox"))
+                    {
+                        textBox = tb;
+                        break;
+                    }
+                }
+            }
+
+            if (textBox == null)
+            {
+                MessageBox.Show("Error: Could not find input field.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            long input = long.Parse(textBox.Text.Trim());
+            ManipController.ExecuteManipFromUnixTime(input);
+            
         }
 
         private void ExecuteBaseRngManip(object sender, RoutedEventArgs e)
