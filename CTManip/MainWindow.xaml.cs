@@ -160,6 +160,7 @@ namespace CTManip
                     MaxLength = 10,
                     Margin = new Thickness(0, 5, 0, 10)
                 };
+                unixTextBox.KeyDown += UnixTimeTextBox_KeyDown;
                 var unixExecuteButton = new Button
                 {
                     Content = "Execute",
@@ -211,6 +212,14 @@ namespace CTManip
             }
         }
 
+        private void UnixTimeTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                ExecuteUnixManip(sender, new RoutedEventArgs());
+            }
+        }
+
         private void ExecuteUnixManip(object sender, RoutedEventArgs e)
         {
             TextBox textBox = null;
@@ -230,9 +239,10 @@ namespace CTManip
             {
                 MessageBox.Show("Error: Could not find input field.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
-            }
+            } 
 
             long input = long.Parse(textBox.Text.Trim());
+            //MessageBox.Show("" + input, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             ManipController.ExecuteManipFromUnixTime(input);
             
         }

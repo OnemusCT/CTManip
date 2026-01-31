@@ -68,6 +68,9 @@ namespace CTManip
 
         public void ExecuteManipFromUnixTime(long unixTime)
         {
+            savedTimeZone = TimeZoneInfo.Local.StandardName;
+            timeAdjustedForOffset = false;
+            currentDate = "";
             DateTime t = DateTimeOffset.FromUnixTimeSeconds(unixTime).UtcDateTime;
             Manip manip = new Manip("UTC", (short)t.Day, (short)t.Month, (short)t.Year, (short)t.Hour, (short)t.Minute, (short)t.Second);
             SetDateTime(manip);
